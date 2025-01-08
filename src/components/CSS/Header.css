@@ -1,0 +1,39 @@
+.header {
+
+    background-color: rgba(104, 190, 218, 0.5); /* Light blue with 30% opacity */
+    padding: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .header.scrolled {
+    background-color: rgb(103, 190, 219); /* Light blue with 30% opacity */
+  }
+  .header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .header nav ul li {
+    display: inline;
+  }
+  
+  .header nav ul li a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .header nav ul li a:hover {
+    text-decoration: underline;
+  }
+
+
+  
+  .header .navbar-brand,
+  .header .nav-link {
+    color: #00008B; /* Dark blue color for text */
+  }
+  
+  .header .nav-link:hover {
+    color: #000080; /* Darker blue on hover */
+  }

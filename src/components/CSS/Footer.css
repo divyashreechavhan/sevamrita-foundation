@@ -1,0 +1,52 @@
+.footer {
+    background-color: #87CEEB; /* Sky blue with 30% opacity */
+    padding: 1rem;
+    text-align: center;
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer .footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer .footer-item {
+    margin: 0.5rem;
+  }
+  
+  .footer .footer-item a {
+    color: #4682B4; /* Steel blue color for text */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .footer .footer-item a:hover {
+    color: #4169E1;
+  }
+  
+  .footer .footer-item ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer .footer-item li {
+    margin: 0.5rem 0; /* Add some margin between list items */
+  }
+  
+  .footer .social-media a {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: #4682B4; /* Steel blue color for icons */
+  }
+  
+  .footer .social-media a:hover {
+    color: #4169E1; /* Royal blue on hover */
+  }
+  
+  .footer .mobile {
+    margin-top: 0.5rem;
+  }
