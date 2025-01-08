@@ -39,7 +39,10 @@ function LandingPage() {
   return (
     <div className="landing-page">
       <div className="image-text-section">
-        <div className="image-container"></div>
+        <div className="image-container">
+        {/* <img src="/images/LandingPageImg.jpg" alt="Landing Page" /> */}
+
+        </div>
         <div className="text-container">
           <h1>Welcome to Sevamrita Foundation</h1>
           <h2>Make life meaningful by "Seva" or service for the benefit of others</h2>

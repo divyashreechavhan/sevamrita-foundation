@@ -20,7 +20,7 @@
   .landing-page .image-text-section .image-container {
     width: 50rem;
     height: 20rem;
-    background-image: url('C:\\Users\\Divyashree Chavhan\\Desktop\\Sevamrita-Foundation\\sevamrita-foundation\\public\\images\\LandingPageImg.jpg');
+    /* background-image: url('./public/images/LandingPageImg.jpg'); */
     background-size: cover;
     background-position: center;
     animation: slideIn 2s forwards;
