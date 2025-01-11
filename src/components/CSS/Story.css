@@ -1,0 +1,241 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .people-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 4%;
+  }
+  
+  .person-card {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem auto;
+    box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.6%;
+    background: #fff;
+    line-height: 1.4;
+    font-family: sans-serif;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 0;
+    max-width: 700px;
+    position: relative;
+  }
+  
+  .person-card.alt {
+    flex-direction: row-reverse;
+  }
+  
+  .person-card a {
+    color: inherit;
+  }
+  
+  .person-card a:hover {
+    color: #5ad67d;
+  }
+  
+  .person-card:hover .person-photo {
+    transform: scale(1.1) rotate(1deg);
+  }
+  
+  .person-meta {
+    position: relative;
+    z-index: 0;
+    height: 200px;
+    flex-basis: 40%;
+    overflow: hidden;
+  }
+  
+  .person-photo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.2s;
+  }
+  
+  .person-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .person-description {
+    padding: 1rem;
+    background: #fff;
+    position: relative;
+    z-index: 1;
+    flex-basis: 60%;
+  }
+  
+  .person-description h1,
+  .person-description h2 {
+    font-family: Poppins, sans-serif;
+  }
+  
+  .person-description h1 {
+    line-height: 1;
+    margin: 0;
+    font-size: 1.7rem;
+    color: #007bff; /* Color for the name */
+  }
+  
+  .person-description h2 {
+    font-size: 1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #5a94d6; /* Color for the designation */
+    margin-top: 5px;
+  }
+  
+  .person-description p {
+    font-size: 1rem;
+    color: #666;
+    margin: 1rem 0 0;
+  }
+  
+  .person-description p:first-of-type {
+    margin-top: 1.25rem;
+  }
+  
+  .person-description p:first-of-type:before {
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 35px;
+    top: -0.75rem;
+    border-radius: 3px;
+  }
+  
+  .person-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: inherit;
+    z-index: -1;
+    transform: skewX(-10deg);
+    transform-origin: top left;
+  }
+  
+  .person-card.alt::before {
+    transform: skewX(10deg);
+    transform-origin: top right;
+  }
+  @media (max-width: 640px) {
+    .people-container {
+      flex-direction: column;
+      gap: 15px;
+      margin: 2%;
+    }
+  
+    .person-card {
+      flex-direction: column;
+      width: 90%;
+      margin: 0 auto;
+      display: block;
+    }
+  
+    .person-meta {
+      height: 190px; /* Reduced height for better fit on smaller screens */
+    }
+  
+    .person-description {
+      padding: 10px;
+    }
+  
+    .person-description h1 {
+      font-size: 1.5rem; /* Adjusted font size for smaller screens */
+    }
+  
+    .person-description h2 {
+      font-size: 0.9rem; /* Slightly smaller font for designation */
+    }
+  
+    .person-description p {
+      font-size: 0.9rem; /* Adjusted paragraph font size */
+    }
+  
+    .person-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .people-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 3%;
+    }
+  .person-card {
+    display: block; /* Use block display for mobile view */
+  }
+
+  
+    .person-meta {
+      height: 180px; /* Adjusted for tablets */
+    }
+  
+    .person-description {
+      padding: 15px;
+    }
+  
+    .person-description h1 {
+      font-size: 1.6rem;
+    }
+  
+    .person-description h2 {
+      font-size: 1rem;
+    }
+  
+    .person-description p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    .people-container {
+      max-width: 1200px;
+      margin: 2% auto;
+      gap: 25px;
+    }
+  
+    .person-card {
+      max-width: 700px;
+    }
+  
+    .person-meta {
+      height: 200px;
+    }
+  
+    .person-description {
+      padding: 20px;
+    }
+  
+    .person-description h1 {
+      font-size: 1.8rem;
+    }
+  
+    .person-description h2 {
+      font-size: 1.1rem;
+    }
+  
+    .person-description p {
+      font-size: 1rem;
+    }
+  }
+  

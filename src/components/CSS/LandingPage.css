@@ -1,116 +1,115 @@
 .landing-page .header {
-    text-align: center;
-    padding: 20px;
-    background-color: #f8f9fa;
-  }
-  .text-container h1 {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.text-container h1 {
   text-shadow: 2px 2px 4px rgba(4, 7, 13, 0.4); /* Adjust the shadow as needed */
 }
-  
+
+.landing-page .image-text-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+  margin-top: -8%;
+  position: relative;
+}
+
+.landing-page .image-container {
+  position: absolute;
+  top: 3%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.landing-page .image-text-section .text-container {
+  width: 75%;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.3); /* White background with some transparency */
+  z-index: 1;
+}
+
+.landing-page h1 {
+  color: rgb(65, 140, 170);
+}
+
+.landing-page .image-text-section .text-container h2 {
+  color: rgb(32, 119, 153);
+}
+
+.landing-page .image-text-section .text-container p {
+  color: rgb(31, 122, 158);
+  text-shadow: 1px 1px 2px rgb(0, 0, 0); /* Add text shadow for border effect */
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.landing-page .header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.landing-page .image-text-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.landing-page .image-text-section p {
+  font-size: 1.2rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
   .landing-page .image-text-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    padding: 20px;
-    margin-top: -8%;
-    margin-bottom: -5%;
+    flex-direction: column;
+    height: auto;
+    justify-content: left;
+    margin: 0; /* Remove negative margin */
+    margin-bottom: 0; /* Remove negative margin */
+    position: relative; /* Ensure text container can be positioned absolutely */
   }
-  
-  .landing-page .image-text-section .image-container {
-    width: 50rem;
-    height: 20rem;
-    /* background-image: url('./public/images/LandingPageImg.jpg'); */
-    background-size: cover;
-    background-position: center;
-    animation: slideIn 2s forwards;
-    border-radius: 3%;
-  }
-  
+
   .landing-page .image-text-section .text-container {
-    width: 75%;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
+    width: 95%;
+    padding: 10px;
+    margin-top: 3%;
+    text-align: left; /* Align text to the left */
+    animation: slideInFromLeft 1s ease-out; /* Apply the slide-in animation */
+    
+    /* margin-bottom: 3%; */
+
+    background-color: rgba(255, 255, 255, 0.3); /* Slightly more opaque for better readability on small screens */
   }
-  .landing-page  h1 {
+
+  .landing-page .image-text-section .image-container {
+    width: 101%; /* Full width for image */
+    height: 50vh; /* Adjust height for smaller screens */
+    opacity: 0.8;
+    border-radius: 0%;
+  }
+
+  .landing-page .image-text-section .text-container h1 {
+    position: static;
+    transform: none;
     color: rgb(65, 140, 170);
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
   }
-  
-  .landing-page .image-text-section .text-container h2 {
-    color: rgb(32, 119, 153);
-  }
-  
-  .landing-page .image-text-section .text-container p {
-    color: rgb(31, 122, 158);
-  }
-  
-  @keyframes slideIn {
-    from {
-      transform: translateX(-100%);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
-  
-  .landing-page .header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .landing-page .image-text-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .landing-page .image-text-section p {
-    font-size: 1.2rem;
-  }
-  
-  /* Responsive styles */
-  @media (max-width: 768px) {
-    .landing-page .image-text-section {
-      flex-direction: column; 
-      height: auto; 
-      margin: 0; /* Remove negative margin */
-      margin-bottom: 0; /* Remove negative margin */
-      position: relative; /* Ensure text container can be positioned absolutely */
-      /* color: white; */
-
-    }
-    .landing-page .image-text-section .text-container p{
-        
-        color: rgb(31, 99, 172);
-       
-
-    }
-    .landing-page .image-text-section .text-container h2{
-        
-        color: rgb(27, 81, 160);
-        border: #f8f9fa;
-        border-radius: 4px;
-
-    }
-  
-    .landing-page .image-text-section .image-container {
-      width: 100%; /* Full width for image */
-      height: 50vh; /* Adjust height for smaller screens */
-      opacity: 0.8;
-      border-radius: 0%;
-    }
-  
-    .landing-page .image-text-section .text-container h1{
-
-       /* width: 90%;  */
-      position: absolute;
-      top: 25%;
-      left: 50%; 
-      transform: translate(-50%, -50%); 
-      color: white; 
-      padding: 20px;   
-      border-radius: 10px;
-      border: 2px solid rgb(27, 81, 160); 
-
-    }
-  }
+}
