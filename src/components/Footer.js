@@ -41,7 +41,8 @@ function Footer() {
           </a>
         </div>
         <div className="footer-item">
-          New website coming soon
+          <h6>New website coming soon</h6>
+          <>Last Updated on 12-Jan-25</>
         </div>
       </div>
     </footer>

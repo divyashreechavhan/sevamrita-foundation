@@ -147,8 +147,11 @@ function Contribute() {
                   Volunteer
                 </Button>
               </div>
+              <p>New Portal Coming Soon For Volunteers</p>
             </div>
           </div>
+          
+
           <div
             className="col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center"
           >
@@ -190,7 +193,7 @@ function Contribute() {
                     </tr>
                   </tbody>
                 </table>
-                
+                <p>New Portal Coming Soon For Donors</p>
                 {/* <Button variant="primary" onClick={handleRazorpayPayment}>
                   Donate with Razorpay
                 </Button> */}

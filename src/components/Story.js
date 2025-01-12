@@ -6,12 +6,14 @@ function Story() {
     {
       name: 'Nirant Patil',
       designation: 'Co-Founder & Director',
+      education:"IIT Bombay, Chemistry'19",
       imageSrc: '/images/NirantPatil1.jpg',
       description: 'Nirant Patil is the Co-Founder & Director of Sevamrita Foundation. With a vision to bring positive change, Niarnt has been leading the organization with dedication and passion.'
     },
     {
-      name: 'Varun Kumar',
+      name: 'Sandeep Kumar Majji',
       designation: 'Co-Founder & Director',
+      education:"IIT Bombay, Computer Science'19",
       imageSrc: '/images/SandeepKumar1.jpg',
       description: 'Sandeep Kumar Majji is the Co-Founder & Director of Sevamrita Foundation. His commitment to social service and community development has been the driving force behind the foundation.'
     }
@@ -31,6 +33,7 @@ function Story() {
             <div className="person-description">
               <h2>{person.designation}</h2>
               <h1>{person.name}</h1>
+              <h6 style={{marginTop:"4px"}}>{person.education}</h6>
               <p>{person.description}</p>
             </div>
           </div>

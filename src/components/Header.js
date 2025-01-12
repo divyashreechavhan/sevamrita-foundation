@@ -5,6 +5,7 @@ import './CSS/Header.css';
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,8 +22,16 @@ function Header() {
     };
   }, []);
 
+  const handleToggle = () => {
+    setExpanded(!expanded);
+  };
+
+  const handleLinkClick = () => {
+    setExpanded(false);
+  };
+
   return (
-    <Navbar expand="lg" className={`sticky-top header ${isScrolled ? 'scrolled' : ''}`}>
+    <Navbar expand="lg" className={`sticky-top header ${isScrolled ? 'scrolled' : ''}`} expanded={expanded}>
       <Container>
         <Navbar.Brand href="/">
           <img
@@ -34,16 +43,16 @@ function Header() {
           />
           {/* Sevamrita Foundation */}
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleToggle} />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/story">Our Story</Nav.Link>
-            <Nav.Link as={Link} to="/about">What We DO</Nav.Link>
+            <Nav.Link as={Link} to="/" onClick={handleLinkClick}>Home</Nav.Link>
+            <Nav.Link as={Link} to="/story" onClick={handleLinkClick}>Our Story</Nav.Link>
+            <Nav.Link as={Link} to="/about" onClick={handleLinkClick}>What We DO</Nav.Link>
           </Nav>
           <Nav className="ms-auto">
-            <Nav.Link as={Link} to="/contribute">How You Can Contribute</Nav.Link>
-            <Nav.Link as={Link} to="/contact">Contact Us</Nav.Link>
+            <Nav.Link as={Link} to="/contribute" onClick={handleLinkClick}>How You Can Contribute</Nav.Link>
+            <Nav.Link as={Link} to="/contact" onClick={handleLinkClick}>Contact Us</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

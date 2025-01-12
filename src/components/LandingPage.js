@@ -21,7 +21,7 @@ function LandingPage() {
     },
     {
       imageSrc: '/images/Dharmamrita.jpg',
-      title: 'Dharmamrita',
+      title: 'Dharamrita',
       description: 'Working towards a better and cleaner environment'
     },
     {
