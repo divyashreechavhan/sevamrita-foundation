@@ -8,6 +8,7 @@ import About from './components/About';
 import Story from './components/Story';
 import Contribute from './components/Contribute';
 import Contact from './components/Contact';
+import Team from './components/Team';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/story" element={<Story />} />
           <Route path="/contribute" element={<Contribute />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/team" element={<Team />} />
         </Routes>
         <Footer />
       </div>

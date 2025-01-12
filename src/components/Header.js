@@ -52,7 +52,7 @@ function Header() {
           </Nav>
           <Nav className="ms-auto">
             <Nav.Link as={Link} to="/contribute" onClick={handleLinkClick}>How You Can Contribute</Nav.Link>
-            <Nav.Link as={Link} to="/contact" onClick={handleLinkClick}>Contact Us</Nav.Link>
+            <Nav.Link as={Link} to="/team" onClick={handleLinkClick}>Our Team</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
