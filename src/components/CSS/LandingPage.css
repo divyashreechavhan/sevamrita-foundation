@@ -74,13 +74,34 @@
   font-size: 1.2rem;
 }
 
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 8%;
+  margin-top: -8%;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  background-color:rgb(103, 189, 212,0.7);
+  color: black;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
 /* Responsive styles */
 @media (max-width: 768px) {
   .landing-page .image-text-section {
     flex-direction: column;
     height: auto;
     justify-content: left;
-    margin: 0; /* Remove negative margin */
+    margin-top: 0; /* Remove negative margin */
     margin-bottom: 0; /* Remove negative margin */
     position: relative; /* Ensure text container can be positioned absolutely */
   }
@@ -111,5 +132,15 @@
     padding: 10px;
     border-radius: 10px;
     border: none;
+  }
+  .stats-container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 13%;
+    
+  }
+
+  .stat-item {
+    margin: 10px 0;
   }
 }

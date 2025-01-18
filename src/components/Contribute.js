@@ -16,6 +16,7 @@ function Contribute() {
   });
   const [errors, setErrors] = useState({});
   const [submissions, setSubmissions] = useState([]);
+  const [fetchError, setFetchError] = useState(null);
 
   const handleVolunteerFormClose = () => setShowVolunteerForm(false);
   const handleVolunteerFormShow = () => setShowVolunteerForm(true);
@@ -42,87 +43,62 @@ function Contribute() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleVolunteerFormSubmit = (event) => {
+  const handleVolunteerFormSubmit = async (event) => {
     event.preventDefault();
 
     if (!validateForm()) {
       return;
     }
 
-    // Add the new submission
-    const updatedSubmissions = [...submissions, formData];
-    setSubmissions(updatedSubmissions);
-
-    // Reset the form data
-    setFormData({
-      name: '',
-      phone: '',
-      email: '',
-      interest: '',
-      city: ''
-    });
-
-    // Close the form modal
-    handleVolunteerFormClose();
-  };
-
-  const handleDownloadExcel = () => {
-    // Create a new workbook and worksheet
-    const wb = XLSX.utils.book_new();
-    const ws = XLSX.utils.json_to_sheet(submissions);
-
-    // Append the worksheet to the workbook
-    XLSX.utils.book_append_sheet(wb, ws, 'Volunteers');
-
-    // Generate Excel file and save it
-    const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
-    const blob = new Blob([wbout], { type: 'application/octet-stream' });
-    saveAs(blob, 'volunteers.xlsx');
-  };
-
-
-  const handleRazorpayPayment = async () => {
-    const orderData = {
-      amount: 500, // Amount in INR
-      currency: 'INR',
-      receipt: 'receipt#1'
-    };
-
-    const response = await fetch('http://localhost:5000/create-order', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(orderData)
-    });
-
-    const order = await response.json();
-
-    const options = {
-      key: 'YOUR_RAZORPAY_KEY_ID', // Enter the Key ID generated from the Dashboard
-      amount: order.amount,
-      currency: order.currency,
-      name: 'Sevamrita Foundation',
-      description: 'Donation',
-      order_id: order.id,
-      handler: function (response) {
-        alert(`Payment successful! Payment ID: ${response.razorpay_payment_id}`);
-      },
-      prefill: {
-        name: formData.name,
-        email: formData.email,
-        contact: formData.phone
-      },
-      notes: {
-        address: 'Sevamrita Foundation Office'
-      },
-      theme: {
-        color: '#3399cc'
+    try {
+      // Fetch the existing Excel file
+      const response = await fetch('https://1drv.ms/x/c/6ba191574d901639/Ea0p2lHL4sJLvPtbAUwywwABRtj1Q5tMDPuR67cWL1h0zQ?e=gaBo9l');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
-    };
+      const arrayBuffer = await response.arrayBuffer();
+      const workbook = XLSX.read(arrayBuffer, { type: 'array' });
 
-    const rzp1 = new window.Razorpay(options);
-    rzp1.open();
+      // Get the first worksheet
+      const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+
+      // Convert the worksheet to JSON
+      const existingData = XLSX.utils.sheet_to_json(worksheet);
+
+      // Append the new entry
+      const newEntry = {
+        Name: formData.name,
+        Email: formData.email,
+        Phone: formData.phone,
+        Interest: formData.interest,
+        City: formData.city
+      };
+      existingData.push(newEntry);
+
+      // Convert the updated JSON back to a worksheet
+      const updatedWorksheet = XLSX.utils.json_to_sheet(existingData);
+
+      // Replace the old worksheet with the updated one
+      workbook.Sheets[workbook.SheetNames[0]] = updatedWorksheet;
+
+      // Write the updated workbook to a file
+      XLSX.writeFile(workbook, 'UpdatedVolunteersData.xlsx');
+
+      // Reset the form data
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        interest: '',
+        city: ''
+      });
+
+      // Close the form modal
+      handleVolunteerFormClose();
+    } catch (error) {
+      console.error('Error fetching the Excel file:', error);
+      setFetchError('Failed to fetch the Excel file. Please try again later.');
+    }
   };
 
   return (
@@ -151,7 +127,6 @@ function Contribute() {
             </div>
           </div>
           
-
           <div
             className="col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center"
           >
@@ -205,13 +180,14 @@ function Contribute() {
 
         {/* <Button variant="secondary" onClick={handleDownloadExcel}>
           Download Volunteer Data
-        </Button> */}
+        </Button>  */}
 
         <Modal show={showVolunteerForm} onHide={handleVolunteerFormClose}>
           <Modal.Header closeButton>
             <Modal.Title>Volunteer Form</Modal.Title>
           </Modal.Header>
           <Modal.Body>
+            {fetchError && <Alert variant="danger">{fetchError}</Alert>}
             <Form onSubmit={handleVolunteerFormSubmit}>
               <Form.Group controlId="formName">
                 <Form.Label>Name</Form.Label>

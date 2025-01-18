@@ -24,6 +24,7 @@
     z-index: 0;
     max-width: 700px;
     position: relative;
+    min-height: 200px;
   }
   
   .person-card.alt {
@@ -42,13 +43,14 @@
     transform: scale(1.1) rotate(1deg);
   }
   
-  .person-meta {
-    position: relative;
-    z-index: 0;
-    height: 200px;
-    flex-basis: 40%;
-    overflow: hidden;
-  }
+.person-meta {
+  position: relative;
+  z-index: 0;
+  flex-basis: 40%;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
   
   .person-photo {
     position: absolute;
@@ -76,6 +78,17 @@
     z-index: 1;
     flex-basis: 60%;
   }
+  
+.contact-info {
+ 
+  margin-top: 10px;
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  margin: 10px;
+  color: #007bff;
+}
   
   .person-description h1,
   .person-description h2 {
@@ -218,9 +231,7 @@
       max-width: 700px;
     }
   
-    .person-meta {
-      height: 200px;
-    }
+  
   
     .person-description {
       padding: 20px;

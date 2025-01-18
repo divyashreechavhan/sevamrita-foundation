@@ -61,6 +61,28 @@ function LandingPage() {
           <p>Sevamrita is a non-profit organization formed by a group of IIT-Bombay Alumni. We are focused on bringing about change in society through "seva" or service by which people can experience the bliss (amrita).</p>
         </div>
       </div>
+      <div className="stats-container">
+        <div className="stat-item">
+          <i className="fas fa-city"></i>
+          <span>3 Cities</span>
+        </div>
+        <div className="stat-item">
+          <i className="fas fa-building"></i>
+          <span>4 Offices</span>
+        </div>
+        <div className="stat-item">
+          <i className="fas fa-users"></i>
+          <span>100+ Volunteers</span>
+        </div>
+        <div className="stat-item">
+          <i className="fas fa-utensils"></i>
+          <span>10000+ Meals Distributed</span>
+        </div>
+        <div className="stat-item">
+          <i className="fas fa-heart"></i>
+          <span>20000+ Lives Impacted</span>
+        </div>
+      </div>
       <div className="container mt-5">
         <div className="row justify-content-center" style={{ marginBottom: '5%' }}>
           {cardsData.map((card, index) => (
