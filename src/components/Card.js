@@ -15,7 +15,7 @@ function Card({ imageSrc, title, description }) {
       <div className="card" style={cardStyle}>
         <img src={imageSrc} className="card-img-top" alt={title} style={imgStyle} />
         <div className="card-body">
-          <h6 className="card-text">{title}</h6>
+          <h4 className="card-text">{title}</h4>
           <p className="card-text">{description}</p>
         </div>
       </div>

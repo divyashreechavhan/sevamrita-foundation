@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
+    "@merc/react-timeline": "^0.1.42",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -18,9 +19,13 @@
     "razorpay": "^2.9.5",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.7",
+    "react-chrono": "^2.6.1",
+    "react-countup": "^6.5.3",
     "react-dom": "^19.0.0",
+    "react-intersection-observer": "^9.15.1",
     "react-router-dom": "^7.1.1",
     "react-scripts": "5.0.1",
+    "styled-components": "^6.1.14",
     "web-vitals": "^2.1.4",
     "xlsx": "^0.18.5"
   },

@@ -1,3 +1,7 @@
+.landing-page {
+  font-family: 'Times New Roman', Times, serif;
+}
+
 .landing-page .header {
   text-align: center;
   padding: 20px;
@@ -83,18 +87,29 @@
 
 .stat-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 120px;
   height: 120px;
-  background-color:rgb(103, 189, 212,0.7);
   color: black;
-  border-radius: 50%;
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
   padding: 10px;
+  border-bottom: 2px solid black;
 }
+
+.stat-item i {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.stat-item span {
+  display: block;
+  margin-top: 5px;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
   .landing-page .image-text-section {
@@ -112,9 +127,6 @@
     margin-top: 3%;
     text-align: left; /* Align text to the left */
     animation: slideInFromLeft 1s ease-out; /* Apply the slide-in animation */
-    
-    /* margin-bottom: 3%; */
-
     background-color: rgba(255, 255, 255, 0.3); /* Slightly more opaque for better readability on small screens */
   }
 
@@ -133,11 +145,13 @@
     border-radius: 10px;
     border: none;
   }
+
   .stats-container {
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
     margin-top: 13%;
-    
+    margin-left: 12%;
   }
 
   .stat-item {
