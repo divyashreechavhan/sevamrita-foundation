@@ -7,11 +7,11 @@ function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-item">
-        <a href="/contact"></a>
-        <div className="mobile">
-       
-        <p > Contact Us :  {phone}</p>
-        </div>
+          <a href="/contact"></a>
+          <div className="mobile">
+
+            <p > Contact Us :  {phone}</p>
+          </div>
         </div>
         <div className="footer-item">
           <ul>
@@ -42,8 +42,9 @@ function Footer() {
         </div>
         <div className="footer-item">
           <h6>New website coming soon</h6>
-          <>Last Updated on 29-Jan-25</>
+          <span>Last Updated on {new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}</span>
         </div>
+
       </div>
     </footer>
   );

@@ -77,7 +77,21 @@
 .landing-page .image-text-section p {
   font-size: 1.2rem;
 }
+.stat-cards-container {
+  position: relative;
+  top: -150px; /* Adjust this value to move it closer or further from the text */
+  width: 100%;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
 
+@media screen and (max-width: 768px) {
+  .stat-cards-container {
+    top: 70px; /* Adjust this value to move it closer or further from the text */
+  }
+  
+}
 .stats-container {
   display: flex;
   justify-content: center;
@@ -85,30 +99,8 @@
   margin-top: -8%;
 }
 
-.stat-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 120px;
-  height: 120px;
-  color: black;
-  font-size: 1rem;
-  font-weight: bold;
-  text-align: center;
-  padding: 10px;
-  border-bottom: 2px solid black;
-}
 
-.stat-item i {
-  font-size: 2rem;
-  margin-bottom: 5px;
-}
 
-.stat-item span {
-  display: block;
-  margin-top: 5px;
-}
 
 /* Responsive styles */
 @media (max-width: 768px) {
@@ -146,15 +138,5 @@
     border: none;
   }
 
-  .stats-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-top: 13%;
-    margin-left: 12%;
-  }
-
-  .stat-item {
-    margin: 10px 0;
-  }
+ 
 }

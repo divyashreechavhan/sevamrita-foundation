@@ -1,0 +1,49 @@
+.testimonial-tag {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00c4f3;
+  }
+  .testimonial-line {
+    border: 0;
+    border-top: 4px solid #00c4f3; /* Customize the line color and thickness */
+    margin: 20px 0; /* Spacing above and below the line */
+    width: 80%; /* Adjust line width */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  
+  .testi {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    margin-left: 4%;
+    margin-bottom: 5%;
+  }
+  
+  .video {
+    width: 50%;
+    max-width: 300px;
+    border-radius: 10px;
+  }
+  
+  .description {
+    width: 50%;
+    font-size: 18px;
+    /* color: #6cc4da; */
+    /* font-weight: bold; */
+  }
+  
+  @media (max-width: 600px) {
+    .testi {
+      flex-direction: column; /* Stacks the video and description vertically */
+      align-items: center;
+    }
+  
+    .video, .description {
+      width: 80%; /* Adjust width to fit better on small screens */
+      max-width: 100%;
+    }
+  }
+  
