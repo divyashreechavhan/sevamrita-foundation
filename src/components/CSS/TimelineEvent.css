@@ -1,0 +1,8 @@
+.event-image {
+    width: 100%; /* Adjusts to paragraph width */
+    max-width: 300px; /* Restricts max width */
+    height: auto;
+    margin: 5px 0; /* Adds spacing */
+    border-radius: 8px; /* Optional: Rounded corners */
+  }
+  

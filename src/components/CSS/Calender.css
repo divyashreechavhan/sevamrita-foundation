@@ -1,0 +1,50 @@
+.calendar-container {
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .live-events {
+    background: #ffecb3;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .event-card {
+    background: white;
+    padding: 15px;
+    margin: 10px auto;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .event-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .event-date {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .event-description {
+    color: #777;
+    font-size: 14px;
+  }
+  
+  .live {
+    background: #ff5252;
+    color: white;
+  }
+  
+  .past {
+    opacity: 0.6;
+  }
+  
+  .upcoming {
+    background: #90caf9;
+  }
+  

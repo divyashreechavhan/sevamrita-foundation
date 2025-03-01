@@ -1,6 +1,6 @@
 import React from 'react';
-
-function TimelineEvent({ direction, date, title, description, onClick }) {
+import "./CSS/TimelineEvent.css";
+function TimelineEvent({ direction, date, title, description, image, isExpanded, onClick }) {
   return (
     <li>
       <div className={`direction-${direction}`}>
@@ -9,7 +9,12 @@ function TimelineEvent({ direction, date, title, description, onClick }) {
           <span className="flag">{title}</span>
           <span className="time-wrapper"><span className="time">{date}</span></span>
         </div>
-        {description && <div className="desc">{description}</div>}
+        {isExpanded && (
+          <div className="desc">
+            {image && <img src={image} alt={title} className="event-image" />}
+            <p>{description}</p>
+          </div>
+        )}
       </div>
     </li>
   );

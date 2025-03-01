@@ -48,9 +48,10 @@ function Header() {
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/" onClick={handleLinkClick}>Home</Nav.Link>
             <Nav.Link as={Link} to="/story" onClick={handleLinkClick}>Our Story</Nav.Link>
-            <Nav.Link as={Link} to="/about" onClick={handleLinkClick}>What We DO</Nav.Link>
+            <Nav.Link as={Link} to="/whatwedo" onClick={handleLinkClick}>What We DO</Nav.Link>
           </Nav>
           <Nav className="ms-auto">
+            {/* <Nav.Link as={Link} to="/events-calender" onClick={handleLinkClick}>Events Calender</Nav.Link> */}
             <Nav.Link as={Link} to="/contribute" onClick={handleLinkClick}>How You Can Contribute</Nav.Link>
             <Nav.Link as={Link} to="/team" onClick={handleLinkClick}>Our Team</Nav.Link>
           </Nav>
