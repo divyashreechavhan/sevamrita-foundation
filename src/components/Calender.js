@@ -1,49 +1,74 @@
-import React, { useState, useMemo } from "react";
-import CalendarEvent from "./CalenderEvent";
-import "./CSS/Calender.css";
+import React, { useEffect, useState } from 'react';
+import { Calendar, dateFnsLocalizer } from 'react-big-calendar';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
+import { format, parse, startOfWeek, getDay } from 'date-fns';
+import enUS from 'date-fns/locale/en-US';
 
-function Calendar() {
-  const today = new Date().toISOString().split("T")[0]; // Format: YYYY-MM-DD
+const locales = { 'en-US': enUS };
 
-  const events = useMemo(() => [
-    { date: "2025-03-01", title: "Tech Meetup", description: "A networking event for tech enthusiasts." },
-    { date: "2025-03-02", title: "AI Workshop", description: "Learn about the latest AI advancements." },
-    { date: "2025-03-05", title: "Startup Pitch", description: "Entrepreneurs pitching their startups." },
-    { date: "2025-02-25", title: "React Conference", description: "Deep dive into React and UI trends." }
-  ], []);
+const localizer = dateFnsLocalizer({
+  format,
+  parse,
+  startOfWeek: () => startOfWeek(new Date(), { weekStartsOn: 1 }),
+  getDay,
+  locales,
+});
+const GOOGLE_SHEET_URL =fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vT-42N3EOltb_6jVLMe1pw-BH7Vt38QBZh2DTI_JoVxClibp034Foc9IzzzVkuqCDULhyfhOXWDddyP/gviz/tq?tqx=out:json", { cache: 'no-store' })
+  .then((res) => res.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error("Error loading data", error));
 
-  const pastEvents = events.filter(event => event.date < today);
-  const upcomingEvents = events.filter(event => event.date > today);
-  const liveEvents = events.filter(event => event.date === today);
+
+const Calender = () => {
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    fetch(GOOGLE_SHEET_URL)
+      .then((res) => res.text())
+      .then((data) => {
+        const json = JSON.parse(data.substring(47).slice(0, -2));
+        const rows = json.table.rows;
+
+        const parsedEvents = rows.map((row) => {
+          const title = row.c[0]?.v;
+          const description = row.c[1]?.v;
+          const date = row.c[2]?.v; // date in DD-MM-YYYY format
+          const startTime = row.c[3]?.v;
+          const endTime = row.c[4]?.v;
+
+          if (!title || !date || !startTime || !endTime) return null;
+
+          // Parse date from DD-MM-YYYY format using date-fns
+          const parsedDate = parse(date, 'dd-MM-yyyy', new Date());
+          const start = new Date(`${parsedDate.toDateString()} ${startTime}`);
+          const end = new Date(`${parsedDate.toDateString()} ${endTime}`);
+
+          return {
+            title: `${title}`,
+            start,
+            end,
+            desc: description || '',
+          };
+        }).filter(Boolean); // Remove any null values
+
+        console.log('Parsed Events:', parsedEvents);  // Check if the events are parsed correctly
+        setEvents(parsedEvents);
+      })
+      .catch((err) => console.error('Error loading sheet data', err));
+  }, []);
 
   return (
-    <div className="calendar-container">
-      <h2>📅 Event Calendar</h2>
-
-      {liveEvents.length > 0 && (
-        <div className="live-events">
-          <h3>🔥 Live Now</h3>
-          {liveEvents.map((event, index) => (
-            <CalendarEvent key={index} event={event} isLive />
-          ))}
-        </div>
-      )}
-
-      <div className="upcoming-events">
-        <h3>⏳ Upcoming Events</h3>
-        {upcomingEvents.map((event, index) => (
-          <CalendarEvent key={index} event={event} />
-        ))}
-      </div>
-
-      <div className="past-events">
-        <h3>⏮️ Past Events</h3>
-        {pastEvents.map((event, index) => (
-          <CalendarEvent key={index} event={event} isPast />
-        ))}
-      </div>
+    <div style={{ width: '70%', height: '80vh', margin: 'auto', padding: '2rem' }}>
+      <Calendar
+        localizer={localizer}
+        events={events}
+        startAccessor="start"
+        endAccessor="end"
+        tooltipAccessor="desc"
+        style={{ height: '100%' }}
+      />
     </div>
   );
-}
+};
 
-export default Calendar;
+export default Calender;
