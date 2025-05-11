@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
+
 
 function Card({ imageSrc, title, description }) {
   const cardStyle = {
     width: '75%',
-    marginTop:'10%',
+    marginTop: '10%',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Add shadow here
     borderRadius: '8px', // Optional: Add rounded corners
     overflow: 'hidden' // Optional: Ensure content stays within rounded corners
@@ -17,6 +19,7 @@ function Card({ imageSrc, title, description }) {
         <div className="card-body">
           <h4 className="card-text">{title}</h4>
           <p className="card-text">{description}</p>
+       
         </div>
       </div>
     </div>

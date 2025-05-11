@@ -21,8 +21,6 @@ function Contribute() {
     setFormData({ ...formData, [name]: value });
   };
 
-
-
   const validateForm = () => {
     const newErrors = {};
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -36,7 +34,6 @@ function Contribute() {
     return Object.keys(newErrors).length === 0;
   };
 
-
   const handleSubmit = (event) => {
     event.preventDefault();
     if (validateForm()) {
@@ -45,67 +42,83 @@ function Contribute() {
     }
   };
 
+  const pageStyle = {
+    backgroundImage: "url('/images/volunteer1.jpg')", // Path to the background image
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    minHeight: '100vh', // Ensures the background covers the full viewport height
+    padding: '20px'
+  };
 
   return (
-    <div className="container mt-5">
-      <div className="row justify-content-center">
-        {/* Volunteer Card */}
-        <div className="col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
-          <div className="card" style={{ width: '18rem' }}>
-            <div className="card-body">
-              <h5 className="card-title">Volunteer</h5>
-              <p className="card-text">Click to volunteer and help us in our mission.</p>
-              <Button variant="primary" onClick={handleVolunteerFormShow}>
-                Volunteer
-              </Button>
-            </div>
-            <p>New Portal Coming Soon For Volunteers</p>
-          </div>
+    <div style={pageStyle}>
+      <div className="container">
+        <div className="text-center mb-5"
+          style={{
+            backgroundColor: "rgba(255, 255, 255, 0.3)", // Whitish background with transparency
+            padding: "10px", // Add padding for spacing
+            borderRadius: "5px", // Rounded corners for a polished look
+            color: "black", // Ensure the text is black for contrast
+            textAlign: "center", // Center-align the text
+            margin: "0 auto", // Center the paragraph horizontally
+          }}>
+          <h2>Contribute to Sevamrita Foundation</h2>
+          <p>
+            Your contributions help us bring meaningful change to society. Whether it's through donations or volunteering, your support makes a difference in the lives of many. Thank you for being a part of our journey!
+          </p>
         </div>
 
-        {/* Donation Card with QR Code Image */}
-        <div className="col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
-          <div className="card" style={{ width: '20rem' }}>
-            <div className="card-body">
-              <h3 className="card-title">Donate</h3>
-              <h6>Scan to Donate</h6>
-              <img src="images/sevamrita-qr.png" alt="QR Code for Donation" style={{ width: '100%', height: 'auto' }} />
-              <p>Sevamrita Foundation</p>
-          
-            
-           
+        {/* Row for parallel cards */}
+        <div className="row">
+          {/* Card 1: Bank Account Details */}
+          <div className="col-12 col-md-6 d-flex justify-content-center mb-4">
+            <div className="card" style={{ width: '20rem' }}>
+              <div className="card-body">
+                <h3 className="card-title">Donate</h3>
+                <h6>Bank Account Details</h6>
+                <table className="table">
+                  <tbody>
+                    <tr>
+                      <td><strong>Account Name</strong></td>
+                      <td>Sevamrita Foundation</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Account Number</strong></td>
+                      <td>924010074546075</td>
+                    </tr>
+                    <tr>
+                      <td><strong>IFSC Code</strong></td>
+                      <td>UTIB0005874</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Bank</strong></td>
+                      <td>Gopanpally, Axis Bank</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Account Type</strong></td>
+                      <td>Savings Trust Account</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>New Portal Coming Soon For Donors</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 2: QR Code Donation */}
+          <div className="col-12 col-md-6 d-flex justify-content-center mb-4">
+            <div className="card" style={{ width: '20rem' }}>
+              <div className="card-body">
+                <h3 className="card-title">Donate</h3>
+                <h6>Scan to Donate</h6>
+                <img src="images/sevamrita-qr.png" alt="QR Code for Donation" style={{ width: '100%', height: 'auto' }} />
+                <p>Sevamrita Foundation</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Volunteer Modal */}
-      <Modal show={showVolunteerForm} onHide={handleVolunteerFormClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Volunteer Form</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {fetchError && <Alert variant="danger">{fetchError}</Alert>}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="formName">
-              <Form.Label>Name</Form.Label>
-              <Form.Control type="text" name="name" value={formData.name} onChange={handleInputChange} required isInvalid={!!errors.name} />
-              <Form.Control.Feedback type="invalid">{errors.name}</Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group controlId="formPhone">
-              <Form.Label>Phone</Form.Label>
-              <Form.Control type="tel" name="phone" value={formData.phone} onChange={handleInputChange} required isInvalid={!!errors.phone} />
-              <Form.Control.Feedback type="invalid">{errors.phone}</Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group controlId="formEmail">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" name="email" value={formData.email} onChange={handleInputChange} required isInvalid={!!errors.email} />
-              <Form.Control.Feedback type="invalid">{errors.email}</Form.Control.Feedback>
-            </Form.Group>
-            <Button variant="primary" type="submit">Submit</Button>
-          </Form>
-        </Modal.Body>
-      </Modal>
     </div>
   );
 }

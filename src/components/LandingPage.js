@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import './CSS/LandingPage.css'; // Import the CSS file
 import Card from './Card'; // Import the Card component
@@ -70,12 +71,9 @@ function LandingPage() {
       </div>
     
       <div className="stat-cards-container">
-  <StatCards />
-</div>
-
-   
-
-      
+      <StatCards />
+      </div>
+  
 
       <div className="container mt-5">
         <div className="row justify-content-center" style={{ marginBottom: '5%' }}>
@@ -89,6 +87,10 @@ function LandingPage() {
           ))}
         </div>  
       </div>
+      <Link to="/whatwedo" style={{'textDecoration' : "none" , 'marginLeft':'10rem'}}>
+            Know more about our pillars
+        </Link>
+      
       <Testimonial/>
     </div>
   );

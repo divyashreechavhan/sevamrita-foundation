@@ -29,7 +29,36 @@ function Team() {
       description: 'Saurabh Pachkhede is the Events Head at Sevamrita Foundation. With a keen eye for detail and exceptional organizational skills, Saurabh has successfully managed numerous events that have significantly contributed to the foundation’s mission.',
       linkedIn: 'https://www.linkedin.com/in/saurabh-pachkhede-0722b7298/',
       email: 'Saurabh.pachkhede@sevamrita.org'
-    }
+    } ,
+      {
+        name: 'Hemant Kumar',
+        designation: 'Chief Finance Officer',
+        education: "IIT Bombay, Computer Science'19",
+        imageSrc: '/images/HemantKumar.jpeg',
+        description: 'Hemant Kumar is the Chief Finance Officer at Sevamrita Foundation. With a strong background in finance and technology, Hemant ensures the financial stability and growth of the organization. Currently working in Indian Railways, he brings a wealth of experience and expertise to the foundation.',
+        email: 'Hemanth@sevamrita.org'
+      },
+      {
+        name: 'Satyam Raj',
+        designation: 'Marketing Head',
+        education: "IIT Bombay, Chemical Engineering'23",
+        imageSrc: '/images/SatyamRaj.jpeg', // Replace with the actual image path
+        description: 'Satyam Raj is the Marketing Head at Sevamrita Foundation. A recent graduate from IIT Bombay, Satyam brings fresh ideas and innovative strategies to the foundation’s marketing efforts. His ability to connect with diverse audiences and create impactful campaigns has been a driving force in spreading the foundation’s mission and vision.',
+        linkedIn: 'https://www.linkedin.com/in/satyam-raj-gupta-85a04718b/',
+        email: 'satyam@sevamrita.org'
+      },
+      {
+        name: 'Divyashree Chavhan',
+        designation: 'Web Development Head',
+        education: 'Expert in modern web technologies',
+        imageSrc: '/images/DivyashreeChavhan.jpeg', // Replace with the actual image path
+        description: 'Divyashree Chavan is the Web Development Head at Sevamrita Foundation. With a passion for creating user-friendly and impactful web solutions, Divyashree has been instrumental in building and maintaining the foundation’s online presence. Her expertise in modern web technologies ensures that the foundation’s digital platforms are both functional and visually appealing.',
+        linkedIn: 'https://www.linkedin.com/in/divyashree-chavan/', // Replace with the actual LinkedIn URL
+        email: 'your-email@example.com' // Replace with your actual email
+      }
+     
+
+
   ];
 
   return (
