@@ -54,7 +54,7 @@ function Team() {
         imageSrc: '/images/DivyashreeChavhan.jpeg', // Replace with the actual image path
         description: 'Divyashree Chavan is the Web Development Head at Sevamrita Foundation. With a passion for creating user-friendly and impactful web solutions, Divyashree has been instrumental in building and maintaining the foundation’s online presence. Her expertise in modern web technologies ensures that the foundation’s digital platforms are both functional and visually appealing.',
         linkedIn: 'https://www.linkedin.com/in/divyashree-chavan/', // Replace with the actual LinkedIn URL
-        email: 'your-email@example.com' // Replace with your actual email
+        email: 'divyashreechavhan@sevamrita.com' 
       }
      
 
