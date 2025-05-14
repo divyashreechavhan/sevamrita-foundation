@@ -87,7 +87,7 @@ function LandingPage() {
           ))}
         </div>  
       </div>
-      <Link to="/whatwedo" style={{'textDecoration' : "none" , 'marginLeft':'10rem'}}>
+      <Link to="/whatwedo" style={{'textDecoration' : "none" , 'paddingLeft':'10%'}}>
             Know more about our pillars
         </Link>
       
