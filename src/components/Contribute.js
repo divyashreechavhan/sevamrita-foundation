@@ -117,6 +117,28 @@ function Contribute() {
               </div>
             </div>
           </div>
+
+        </div>
+        <div className="row">
+          <div className="col-12 d-flex justify-content-center">
+            <a
+              href="https://docs.google.com/forms/d/1KropxtLu4GgIAOQWlmUph987l_nYY-wUWElF6IhENEs/edit" // Replace with your actual 80G form link
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: "white",
+                backgroundColor: "#5a94d6",
+                padding: "12px 28px",
+                borderRadius: "6px",
+                textDecoration: "none",
+                fontWeight: "bold",
+                fontSize: "1.1rem",
+                margin: "20px 0"
+              }}
+            >
+              Fill this form for 80G Reciept
+            </a>
+          </div>
         </div>
       </div>
     </div>
