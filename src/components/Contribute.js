@@ -43,16 +43,19 @@ function Contribute() {
   };
 
   const pageStyle = {
-    backgroundImage: "url('/images/volunteer1.jpg')", // Path to the background image
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    minHeight: '100vh', // Ensures the background covers the full viewport height
-    padding: '20px'
-  };
+  position: 'relative',
+  backgroundImage: "url('/images/volunteer1.jpg')",
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  minHeight: '100vh',
+  padding: '20px',
+  overflow: 'hidden'
+};
 
   return (
     <div style={pageStyle}>
+      
       <div className="container">
         <div className="text-center mb-5"
           style={{
@@ -126,16 +129,21 @@ function Contribute() {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                color: "white",
-                backgroundColor: "#5a94d6",
-                padding: "12px 28px",
-                borderRadius: "6px",
-                textDecoration: "none",
-                fontWeight: "bold",
-                fontSize: "1.1rem",
-                margin: "20px 0"
-              }}
-            >
+        color: "#fff",
+        background: "linear-gradient(90deg, #2193b0 0%, #6dd5ed 100%)",
+        boxShadow: "0 4px 16px rgba(33, 147, 176, 0.2)",
+        padding: "14px 32px",
+        borderRadius: "30px",
+        textDecoration: "none",
+        fontWeight: "bold",
+        fontSize: "1.15rem",
+        letterSpacing: "1px",
+        margin: "24px 0",
+        transition: "background 0.3s"
+      }}
+      onMouseOver={e => e.currentTarget.style.background = "linear-gradient(90deg, #6dd5ed 0%, #2193b0 100%)"}
+      onMouseOut={e => e.currentTarget.style.background = "linear-gradient(90deg, #2193b0 0%, #6dd5ed 100%)"}
+    >
               Fill this form for 80G Reciept
             </a>
           </div>
