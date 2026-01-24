@@ -1,0 +1,115 @@
+/* Design Tokens for Sevamrita Foundation */
+
+:root {
+    /* =========================================
+     Color System
+     ========================================= */
+
+    /* Primary Colors - Trust & Compassion */
+    --color-primary: #2563EB;
+    /* Royal Blue */
+    --color-primary-dark: #1E40AF;
+    --color-primary-light: #DBEAFE;
+
+    /* Secondary Colors - Warmth & Hope */
+    --color-accent: #F59E0B;
+    /* Warm Amber */
+    --color-accent-dark: #D97706;
+    --color-success: #10B981;
+    /* Emerald */
+
+    /* Neutral Colors */
+    --color-background: #F9FAFB;
+    /* Cool Gray */
+    --color-surface: #FFFFFF;
+    --color-text-primary: #111827;
+    --color-text-secondary: #6B7280;
+    --color-border: #E5E7EB;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+    --gradient-card-hover: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%);
+    --gradient-success: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    --gradient-dark: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+    --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+
+    /* =========================================
+     Typography System
+     ========================================= */
+
+    --font-primary: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-accent: 'Outfit', sans-serif;
+
+    --font-size-xs: 0.75rem;
+    /* 12px */
+    --font-size-sm: 0.875rem;
+    /* 14px */
+    --font-size-base: 1rem;
+    /* 16px */
+    --font-size-lg: 1.125rem;
+    /* 18px */
+    --font-size-xl: 1.25rem;
+    /* 20px */
+    --font-size-2xl: 1.5rem;
+    /* 24px */
+    --font-size-3xl: 1.875rem;
+    /* 30px */
+    --font-size-4xl: 2.25rem;
+    /* 36px */
+    --font-size-5xl: 3rem;
+    /* 48px */
+
+    /* =========================================
+     Spacing System
+     ========================================= */
+
+    --spacing-xs: 0.25rem;
+    /* 4px */
+    --spacing-sm: 0.5rem;
+    /* 8px */
+    --spacing-md: 1rem;
+    /* 16px */
+    --spacing-lg: 1.5rem;
+    /* 24px */
+    --spacing-xl: 2rem;
+    /* 32px */
+    --spacing-2xl: 3rem;
+    /* 48px */
+    --spacing-3xl: 4rem;
+    /* 64px */
+
+    /* =========================================
+     Elevation & Shadows
+     ========================================= */
+
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-color: 0 4px 20px rgba(37, 99, 235, 0.2);
+
+    /* =========================================
+     Border Radius
+     ========================================= */
+
+    --radius-sm: 0.375rem;
+    /* 6px */
+    --radius-md: 0.5rem;
+    /* 8px */
+    --radius-lg: 0.75rem;
+    /* 12px */
+    --radius-xl: 1rem;
+    /* 16px */
+    --radius-2xl: 1.5rem;
+    /* 24px */
+    --radius-full: 9999px;
+
+    /* =========================================
+     Transitions
+     ========================================= */
+
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}

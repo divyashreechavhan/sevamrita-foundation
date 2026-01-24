@@ -1,0 +1,123 @@
+/* Pillars Section Styles */
+.pillars-container {
+  padding: var(--spacing-3xl) var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pillar-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2xl);
+  margin-bottom: var(--spacing-4xl);
+  opacity: 0;
+  animation: fadeInUp 0.8s forwards;
+}
+
+.pillar-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.pillar-image-container {
+  flex: 1;
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.pillar-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pillar-image-container:hover .pillar-image {
+  transform: scale(1.05);
+}
+
+.pillar-content {
+  flex: 1;
+  padding: var(--spacing-lg);
+}
+
+.pillar-title {
+  font-family: var(--font-accent);
+  color: var(--color-text-primary);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: var(--spacing-lg);
+  font-weight: 700;
+}
+
+.pillar-description {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+}
+
+.pillar-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-md) 0;
+}
+
+.pillar-list li {
+  position: relative;
+  padding-left: var(--spacing-xl);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-primary);
+}
+
+.pillar-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-success);
+  font-weight: bold;
+}
+
+/* Animation Delays */
+.pillar-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.pillar-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.pillar-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.pillar-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.pillar-item:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.pillar-item:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .pillar-item {
+    flex-direction: column !important;
+    gap: var(--spacing-lg);
+    text-align: center;
+  }
+
+  /* Title is centered by flex in parent */
+
+  .pillar-list li {
+    text-align: left;
+    display: inline-block;
+    margin-right: var(--spacing-lg);
+  }
+}

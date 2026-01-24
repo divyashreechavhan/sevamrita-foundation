@@ -1,0 +1,203 @@
+/* Ensure cards adjust properly across different screen sizes */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stat-cards-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: stretch !important;
+}
+
+.stat-cards-row>[class*='col-'] {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.stat-cards-row .custom-card-width {
+  display: flex !important;
+  flex-direction: column !important;
+  /* Removed flex: 1 to respect bootstrap grid width */
+  align-self: stretch !important;
+}
+
+.stat-cards-row .card-stats {
+  width: 100%;
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+.stat-cards-row .card-body {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+/* Ensure all cards have the same width and height */
+.custom-card-width {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Ensures card height is consistent */
+  height: 100%;
+  /* Ensures card height remains equal */
+}
+
+.col-xl-3,
+.col-lg-6,
+.col-md-4,
+.col-sm-6 {
+  padding: 15px;
+  display: flex;
+  flex: 1 1 280px;
+  /* Flex to distribute space evenly */
+  min-width: 250px;
+  /* Ensures cards do not become too small */
+}
+
+/* Card styling */
+/* Stat Cards Styles */
+.custom-card-width {
+  margin-bottom: var(--spacing-lg);
+}
+
+.card-stats {
+  border: none;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-base);
+  background: var(--color-surface);
+  overflow: hidden;
+  height: 100%;
+}
+
+.card-stats:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.card-stats .card-body {
+  padding: 1.5rem;
+}
+
+.card-stats .h2 {
+  font-family: var(--font-accent);
+  color: var(--color-text-primary);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.card-stats .card-title {
+  color: var(--color-text-secondary) !important;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+}
+
+.icon-shape {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.25rem;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+}
+
+.card-stats:hover .icon-shape {
+  transform: scale(1.1) rotate(10deg);
+}
+
+/* Gradients for icons */
+.bg-gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.bg-gradient-warning {
+  background: var(--color-accent);
+}
+
+.bg-gradient-success {
+  background: var(--gradient-success);
+}
+
+.bg-gradient-info {
+  background: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%);
+}
+
+.bg-gradient-danger {
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+}
+
+/* Floating animation */
+.animate-float-delay-1 {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.animate-float-delay-2 {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.animate-float-delay-3 {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-float-delay-4 {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+.animate-float-delay-5 {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 2.5s;
+}
+
+@media (max-width: 768px) {
+  .card-stats .h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Removed duplicate definitions to avoid conflict */
+/* Icon styling handled above */
+
+/* Background colors */
+.bg-info {
+  background: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%) !important;
+}
+
+.bg-danger {
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%) !important;
+}
+
+.bg-yellow {
+  background: var(--color-accent) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}

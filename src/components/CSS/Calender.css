@@ -1,0 +1,49 @@
+.calendar-container {
+  text-align: center;
+  font-family: var(--font-primary);
+}
+
+.live-events {
+  background: var(--color-accent);
+  padding: 10px;
+  border-radius: var(--radius-lg);
+  margin-bottom: 10px;
+}
+
+.event-card {
+  background: var(--color-surface);
+  padding: 15px;
+  margin: 10px auto;
+  width: 300px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.event-card:hover {
+  transform: scale(1.05);
+}
+
+.event-date {
+  font-weight: bold;
+  color: var(--color-text-secondary);
+}
+
+.event-description {
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
+
+.live {
+  background: #ff5252;
+  color: white;
+}
+
+.past {
+  opacity: 0.6;
+}
+
+.upcoming {
+  background: var(--color-primary-light);
+}

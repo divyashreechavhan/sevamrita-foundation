@@ -1,0 +1,117 @@
+/* Premium Card Styles */
+
+.premium-card {
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.premium-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Top gradient border effect */
+.premium-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: transform var(--transition-base);
+    transform-origin: left;
+    z-index: 10;
+}
+
+.premium-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Image wrapper with zoom effect */
+.premium-card .card-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-top: 60%;
+    /* Aspect ratio 5:3 */
+}
+
+.premium-card .card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.premium-card:hover .card-image {
+    transform: scale(1.1);
+}
+
+.card-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(37, 99, 235, 0.8) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.premium-card:hover .card-image-overlay {
+    opacity: 1;
+}
+
+/* Content area */
+.premium-card .card-content {
+    padding: var(--spacing-lg);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.premium-card .card-title {
+    font-family: var(--font-accent);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.premium-card .card-text {
+    font-family: var(--font-primary);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+/* Overlay variant for full image cards */
+.premium-card-overlay {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.premium-card-overlay .overlay-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.8) 0%,
+            rgba(0, 0, 0, 0.4) 50%,
+            transparent 100%);
+    opacity: 0.8;
+    transition: opacity var(--transition-base);
+}
+
+.premium-card-overlay:hover .overlay-gradient {
+    opacity: 1;
+}

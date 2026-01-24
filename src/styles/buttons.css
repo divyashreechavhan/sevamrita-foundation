@@ -1,0 +1,287 @@
+/* =========================================
+   Global Button Styles
+   ========================================= */
+
+/* Primary Button - Solid with Gradient */
+.btn-primary,
+.btn-register,
+.btn-submit-volunteer,
+.btn-show-volunteer-form,
+.auth-btn {
+    padding: 0.875rem 1.5rem;
+    border: none;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 12px -2px rgba(37, 99, 235, 0.3);
+    font-family: var(--font-primary);
+}
+
+.btn-primary:hover,
+.btn-register:hover,
+.btn-submit-volunteer:hover,
+.btn-show-volunteer-form:hover,
+.auth-btn:hover {
+    box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Outline Button - Border with Transparent Background */
+.btn-outline,
+.btn-view-details {
+    padding: 0.875rem 1.5rem;
+    border: 2px solid var(--color-primary);
+    background: transparent;
+    color: var(--color-primary);
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: var(--font-primary);
+}
+
+.btn-outline:hover,
+.btn-view-details:hover {
+    background: var(--color-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.3);
+}
+
+/* Modern Primary Button (for Landing Page) */
+.btn-modern-primary {
+    padding: 0.875rem 1.5rem;
+    border: none;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 12px -2px rgba(37, 99, 235, 0.3);
+}
+
+.btn-modern-primary:hover {
+    box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Modern Outline Button (for Landing Page) */
+.btn-modern-outline {
+    padding: 0.875rem 1.5rem;
+    border: 2px solid var(--color-primary);
+    background: transparent;
+    color: var(--color-primary);
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-modern-outline:hover {
+    background: var(--color-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.3);
+}
+
+/* 80G Certificate Button */
+.btn-80g {
+    padding: 0.875rem 1.5rem;
+    border: none;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 12px -2px rgba(37, 99, 235, 0.3);
+}
+
+.btn-80g:hover {
+    box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-primary:disabled,
+.btn-outline:disabled,
+.btn-modern-primary:disabled,
+.btn-modern-outline:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* =========================================
+   Bootstrap Button Overrides - Consistent Blue Theme
+   ========================================= */
+
+/* Primary Button Override */
+.btn-primary {
+    background: var(--gradient-primary) !important;
+    border: none !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4) !important;
+    transform: translateY(-2px);
+    color: #ffffff !important;
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.25) !important;
+}
+
+/* Outline Primary Button Override */
+.btn-outline-primary {
+    border: 2px solid #2563eb !important;
+    color: #2563eb !important;
+    background: transparent !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
+    border-color: #2563eb !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3) !important;
+    transform: translateY(-2px);
+}
+
+/* Success Button Override - Keep green but enhance */
+.btn-success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+    border: none !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3) !important;
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4) !important;
+    transform: translateY(-2px);
+}
+
+/* Danger Button Override */
+.btn-danger {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+    border: none !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3) !important;
+}
+
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:active {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%) !important;
+    box-shadow: 0 8px 20px rgba(239, 68, 68, 0.4) !important;
+    transform: translateY(-2px);
+}
+
+/* Warning/Secondary Button Override */
+.btn-warning,
+.btn-secondary {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+    border: none !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3) !important;
+}
+
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active,
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
+    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4) !important;
+    transform: translateY(-2px);
+}
+
+/* Info Button Override - Same as Primary */
+.btn-info {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
+    border: none !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+}
+
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4) !important;
+    transform: translateY(-2px);
+}
+
+/* Light/Link Button Override */
+.btn-light,
+.btn-link {
+    color: #2563eb !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+.btn-light:hover,
+.btn-link:hover {
+    color: #1d4ed8 !important;
+    text-decoration: underline;
+}
+
+/* Global Button Styles */
+.btn {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Rounded Pill Buttons */
+.btn.rounded-pill {
+    border-radius: 9999px !important;
+}
+
+/* Disabled State for All Buttons */
+.btn:disabled,
+.btn.disabled {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+    box-shadow: none !important;
+}

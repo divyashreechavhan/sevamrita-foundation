@@ -1,0 +1,109 @@
+/* Footer Styles */
+.footer {
+  background: var(--gradient-dark);
+  color: var(--color-text-secondary);
+  padding: var(--spacing-3xl) 0 var(--spacing-xl);
+  position: relative;
+  overflow: hidden;
+  margin-top: auto;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(37, 99, 235, 0.5),
+      transparent);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: var(--spacing-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.footer-item {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+}
+
+.footer-item h6 {
+  color: white;
+  margin-bottom: var(--spacing-md);
+  font-family: var(--font-accent);
+  letter-spacing: 0.5px;
+}
+
+.footer-contact {
+  color: white;
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  display: inline-block;
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer-link:hover {
+  color: white;
+  transform: translateX(4px);
+}
+
+/* Social Media Icons */
+.footer .social-media {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+}
+
+.footer .social-media a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1.25rem;
+}
+
+.footer .social-media a:hover {
+  background: var(--gradient-primary);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);
+  border-color: transparent;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: var(--font-size-sm);
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}

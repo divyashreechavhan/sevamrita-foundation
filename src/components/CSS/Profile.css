@@ -1,0 +1,348 @@
+/* Profile Page - Admin Style & Dashboard Layout */
+.profile-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #f8fafc;
+    overflow: hidden;
+}
+
+/* Hero Section */
+.profile-page .page-hero {
+    background: var(--gradient-primary);
+    padding: 2.5rem 0;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.profile-page .page-hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-page .page-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0 0 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    color: white;
+    line-height: 1.2;
+}
+
+.profile-page .page-subtitle {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    text-align: center;
+    max-width: 600px;
+}
+
+/* Main Container */
+.profile-page .container-custom {
+    flex: 1;
+    overflow: hidden;
+    padding: 1.5rem 2rem;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-page form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+/* Profile Sections Grid - Desktop Dashboard */
+.profile-sections {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 1.5rem;
+    flex: 1;
+    overflow-y: scroll;
+    /* Force visible scrollbar */
+    padding-bottom: 5rem;
+    /* Space for fixed save button */
+    padding-right: 0.5rem;
+}
+
+/* Scrollbar Styling */
+.profile-sections::-webkit-scrollbar {
+    width: 8px;
+}
+
+.profile-sections::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+.profile-sections::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 4px;
+}
+
+.profile-sections::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-dark);
+}
+
+/* Cards */
+.profile-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e2e8f0;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.title-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+/* Avatar Section in Personal Info Card */
+.card-avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.profile-avatar {
+    width: 90px;
+    height: 90px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+    margin-bottom: 1rem;
+}
+
+.badge-role {
+    margin-top: -1.5rem;
+    margin-bottom: 0.5rem;
+    z-index: 2;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 2px solid white;
+    background: var(--color-primary);
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.username-tag {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+/* Grid Placement */
+.profile-card:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+}
+
+.profile-card:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.profile-card:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.profile-card:nth-child(4) {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+/* Save Actions */
+.save-actions {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 1rem 0;
+    background: linear-gradient(to top, #f8fafc 80%, transparent);
+    /* Fade effect matches bg */
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    pointer-events: none;
+    /* Let clicks pass through area */
+}
+
+.save-actions button,
+.save-actions .save-message {
+    pointer-events: auto;
+    /* Re-enable clicks */
+}
+
+.btn-profile-save {
+    padding: 0.75rem 2rem;
+    font-size: 0.95rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Form Styles */
+.form-group-auth {
+    margin-bottom: 1rem;
+}
+
+.form-input-auth {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.form-label-auth {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.form-help-text {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    font-style: italic;
+}
+
+/* Checkbox overlay fix */
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 0.75rem;
+}
+
+.custom-checkbox {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.custom-checkbox:has(input:checked) {
+    background: var(--color-primary-light);
+    border-color: var(--color-primary);
+}
+
+/* Loading Skeleton Effect */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+    .profile-page {
+        height: auto;
+        overflow: visible;
+        padding-bottom: 4rem;
+        display: block;
+    }
+
+    .profile-page .container-custom {
+        overflow: visible;
+        padding: 1rem;
+        display: block;
+    }
+
+    .profile-sections {
+        display: flex;
+        flex-direction: column;
+        overflow: visible;
+        padding-bottom: 0;
+    }
+
+    .profile-card {
+        grid-column: auto !important;
+        grid-row: auto !important;
+    }
+
+    .save-actions {
+        position: static;
+        background: none;
+        margin-top: 2rem;
+        justify-content: center;
+    }
+
+    .profile-page form {
+        overflow: visible;
+        display: block;
+        height: auto;
+    }
+}

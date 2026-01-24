@@ -1,0 +1,110 @@
+/* Header Styles */
+.header {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 0.5rem 1rem;
+  transition: all var(--transition-base);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
+  z-index: 1050;
+}
+
+/* Ensure Bootstrap dropdown menu appears above page content */
+/* Important: These overrides prevent page-specific CSS from hiding the header dropdown */
+.header .dropdown-menu {
+  z-index: 1060 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  display: none;
+}
+
+.header .dropdown-menu.show {
+  display: block !important;
+}
+
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow-md);
+  padding: 0.25rem 1rem;
+}
+
+.header .navbar-brand {
+  display: flex;
+  align-items: center;
+  transition: transform var(--transition-fast);
+}
+
+.header .navbar-brand:hover {
+  transform: scale(1.02);
+}
+
+.header .navbar-nav {
+  gap: var(--spacing-sm);
+}
+
+.header .nav-link {
+  color: var(--color-text-primary) !important;
+  font-family: var(--font-accent);
+  font-weight: 500;
+  font-size: var(--font-size-base);
+  padding: 0.5rem 1rem !important;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.header .nav-link:hover,
+.header .nav-link.active {
+  color: var(--color-primary) !important;
+}
+
+/* Animated Underline */
+.header .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transition: width var(--transition-base);
+  border-radius: 2px;
+}
+
+.header .nav-link:hover::after,
+.header .nav-link.active::after {
+  width: 80%;
+}
+
+/* Mobile Menu */
+@media (max-width: 991px) {
+  .header .navbar-collapse {
+    background: white;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    margin-top: var(--spacing-sm);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-border);
+  }
+
+  .header .nav-link::after {
+    display: none;
+  }
+
+  .header .nav-link:hover {
+    background-color: var(--color-background);
+    border-radius: var(--radius-md);
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-toggler {
+    padding: 4px 8px !important;
+    font-size: 1rem;
+    border-width: 1px;
+    border-color: var(--color-primary) !important;
+    color: var(--color-primary) !important;
+  }
+}

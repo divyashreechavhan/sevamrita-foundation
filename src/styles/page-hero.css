@@ -1,0 +1,162 @@
+/* =========================================
+   Unified Page Hero Styles
+   ========================================= */
+
+/* Base Page Hero Section */
+.page-hero {
+    position: relative;
+    padding: calc(80px + var(--spacing-3xl)) 0 var(--spacing-3xl);
+    text-align: center;
+    background: var(--gradient-hero);
+}
+
+.page-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Unified Page Title */
+.page-title {
+    font-family: var(--font-accent);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.2;
+}
+
+/* The blue highlight box used across all pages - !important ensures this is the default */
+.highlight {
+    background-color: var(--color-primary-light) !important;
+    padding: 0 0.5rem !important;
+    display: inline-block !important;
+    color: var(--color-text-primary) !important;
+    /* Reset any gradient text effects that may leak from other pages */
+    -webkit-background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+    background-clip: initial !important;
+}
+
+/* Page Subtitle */
+.page-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Unified Section Title */
+.section-title {
+    font-family: var(--font-accent);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.section-title i {
+    color: var(--color-primary);
+}
+
+.section-title-left {
+    justify-content: flex-start;
+}
+
+/* Section Header Container */
+.section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-3xl);
+}
+
+.section-header .section-description {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Unified Content Sections */
+.page-section {
+    padding: var(--spacing-3xl) 0;
+}
+
+.page-section-light {
+    background-color: var(--color-surface);
+}
+
+.page-section-gray {
+    background-color: var(--color-background);
+}
+
+/* Card Base Container */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-xl);
+}
+
+/* Unified Card Style */
+.unified-card {
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-border);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.unified-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+    border-color: rgba(37, 99, 235, 0.2);
+}
+
+/* Card Header */
+.card-header-unified {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--color-background);
+}
+
+.card-header-unified h3 {
+    color: var(--color-primary);
+    font-family: var(--font-accent);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.5rem;
+}
+
+.card-header-unified h6,
+.card-header-unified .card-subtitle {
+    color: var(--color-text-secondary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .page-hero {
+        padding: calc(80px + var(--spacing-xl)) 0 var(--spacing-2xl);
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+}

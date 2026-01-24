@@ -1,0 +1,87 @@
+/* =========================================
+   App-Level CSS Normalization
+   Ensures consistent rendering on every page load
+   ========================================= */
+
+/* Force consistent rendering */
+.App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Prevent layout shifts from animations */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Ensure main content takes available space */
+.App>main,
+.App>.main-content {
+    flex: 1;
+}
+
+/* Fix for Bootstrap's inconsistent flex behaviors */
+.App .d-flex {
+    display: flex !important;
+}
+
+.App .flex-column {
+    flex-direction: column !important;
+}
+
+.App .align-items-center {
+    align-items: center !important;
+}
+
+.App .justify-content-center {
+    justify-content: center !important;
+}
+
+/* Prevent Bootstrap card shadows from being inconsistent */
+.App .card {
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+}
+
+/* Consistent form control styling */
+.App .form-control {
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    padding: 0.75rem 1rem;
+    font-family: var(--font-primary);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.App .form-control:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    outline: none;
+}
+
+/* Consistent modal styling */
+.App .modal-content {
+    border-radius: var(--radius-xl);
+    border: none;
+    box-shadow: var(--shadow-xl);
+}
+
+/* Fix for navbar consistent height */
+.App .navbar {
+    min-height: 70px;
+}
+
+/* GPU-accelerated fade-in to prevent FOUC (Flash of Unstyled Content) */
+@keyframes fadeInContent {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.App {
+    animation: fadeInContent 0.01s ease-out;
+}
