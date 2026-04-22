@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import donationService from '../../../services/donationService';
 import StatCard from './components/StatCard';
@@ -26,31 +26,7 @@ const DonationManagement = () => {
         fetchDonations();
     }, []);
 
-    useEffect(() => {
-        filterDonations();
-    }, [donations, searchTerm, dateFrom, dateTo, minAmount, maxAmount]);
-
-    const fetchDonations = async () => {
-        setLoading(true);
-        setError('');
-
-        try {
-            const result = await donationService.getAllDonations();
-
-            if (result.success) {
-                setDonations(result.data || []);
-            } else {
-                setError(result.error || 'Failed to load donations');
-            }
-        } catch (err) {
-            setError('An error occurred while loading donations');
-            console.error('Error fetching donations:', err);
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    const filterDonations = () => {
+    const filterDonations = useCallback(() => {
         let filtered = [...donations];
 
         // Search filter
@@ -92,6 +68,30 @@ const DonationManagement = () => {
 
         setFilteredDonations(filtered);
         setCurrentPage(1); // Reset to first page when filters change
+    }, [donations, searchTerm, dateFrom, dateTo, minAmount, maxAmount]);
+
+    useEffect(() => {
+        filterDonations();
+    }, [filterDonations]);
+
+    const fetchDonations = async () => {
+        setLoading(true);
+        setError('');
+
+        try {
+            const result = await donationService.getAllDonations();
+
+            if (result.success) {
+                setDonations(result.data || []);
+            } else {
+                setError(result.error || 'Failed to load donations');
+            }
+        } catch (err) {
+            setError('An error occurred while loading donations');
+            console.error('Error fetching donations:', err);
+        } finally {
+            setLoading(false);
+        }
     };
 
     const clearFilters = () => {

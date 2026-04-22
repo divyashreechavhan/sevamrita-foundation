@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import organizationService from '../../../services/organizationService';
 import StatCard from './components/StatCard';
@@ -40,9 +40,30 @@ const OrganizationManagement = () => {
         fetchOrganizations();
     }, []);
 
+    const filterOrganizations = useCallback(() => {
+        let filtered = [...organizations];
+
+        // Search filter
+        if (searchTerm) {
+            const term = searchTerm.toLowerCase();
+            filtered = filtered.filter(org =>
+                org.name?.toLowerCase().includes(term) ||
+                org.description?.toLowerCase().includes(term) ||
+                org.contactEmail?.toLowerCase().includes(term)
+            );
+        }
+
+        // Type filter
+        if (typeFilter !== 'ALL') {
+            filtered = filtered.filter(org => org.type === typeFilter);
+        }
+
+        setFilteredOrgs(filtered);
+    }, [organizations, searchTerm, typeFilter]);
+
     useEffect(() => {
         filterOrganizations();
-    }, [organizations, searchTerm, typeFilter]);
+    }, [filterOrganizations]);
 
     const fetchOrganizations = async () => {
         setLoading(true);
@@ -62,27 +83,6 @@ const OrganizationManagement = () => {
         } finally {
             setLoading(false);
         }
-    };
-
-    const filterOrganizations = () => {
-        let filtered = [...organizations];
-
-        // Search filter
-        if (searchTerm) {
-            const term = searchTerm.toLowerCase();
-            filtered = filtered.filter(org =>
-                org.name?.toLowerCase().includes(term) ||
-                org.description?.toLowerCase().includes(term) ||
-                org.contactEmail?.toLowerCase().includes(term)
-            );
-        }
-
-        // Type filter
-        if (typeFilter !== 'ALL') {
-            filtered = filtered.filter(org => org.type === typeFilter);
-        }
-
-        setFilteredOrgs(filtered);
     };
 
     const resetForm = () => {

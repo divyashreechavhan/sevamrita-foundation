@@ -126,7 +126,7 @@ export const formatDateTimeForExport = (datetime) => {
     });
 };
 
-export default {
+const ExportUtils = {
     exportToCSV,
     formatDataForExport,
     exportTableToCSV,
@@ -134,3 +134,5 @@ export default {
     formatDateForExport,
     formatDateTimeForExport
 };
+
+export default ExportUtils;

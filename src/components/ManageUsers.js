@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import userService from '../services/userService';
 import authService from '../services/authService';
@@ -28,9 +28,30 @@ const ManageUsers = () => {
         fetchUsers();
     }, []);
 
+    const filterUsers = useCallback(() => {
+        let filtered = [...users];
+
+        // Search filter
+        if (searchTerm) {
+            const term = searchTerm.toLowerCase();
+            filtered = filtered.filter(user =>
+                user.username?.toLowerCase().includes(term) ||
+                user.email?.toLowerCase().includes(term) ||
+                user.id?.toString().includes(term)
+            );
+        }
+
+        // Role filter
+        if (roleFilter !== 'ALL') {
+            filtered = filtered.filter(user => user.role === roleFilter);
+        }
+
+        setFilteredUsers(filtered);
+    }, [users, searchTerm, roleFilter]);
+
     useEffect(() => {
         filterUsers();
-    }, [users, searchTerm, roleFilter]);
+    }, [filterUsers]);
 
     const fetchUsers = async () => {
         setLoading(true);
@@ -50,27 +71,6 @@ const ManageUsers = () => {
         } finally {
             setLoading(false);
         }
-    };
-
-    const filterUsers = () => {
-        let filtered = [...users];
-
-        // Search filter
-        if (searchTerm) {
-            const term = searchTerm.toLowerCase();
-            filtered = filtered.filter(user =>
-                user.username?.toLowerCase().includes(term) ||
-                user.email?.toLowerCase().includes(term) ||
-                user.id?.toString().includes(term)
-            );
-        }
-
-        // Role filter
-        if (roleFilter !== 'ALL') {
-            filtered = filtered.filter(user => user.role === roleFilter);
-        }
-
-        setFilteredUsers(filtered);
     };
 
     const openRoleModal = (user) => {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import authService from '../../services/authService';
 import eventService from '../../services/eventService';
@@ -48,11 +48,7 @@ const Dashboard = () => {
     const [budgetForm, setBudgetForm] = useState({ eventId: '', requestedAmount: '', reason: '' });
     const [formMessage, setFormMessage] = useState({ type: '', text: '' });
 
-    useEffect(() => {
-        fetchDashboardData();
-    }, [user, userRole]);
-
-    const fetchDashboardData = async () => {
+    const fetchDashboardData = useCallback(async () => {
         if (!user) return;
 
         setLoading(true);
@@ -131,7 +127,13 @@ const Dashboard = () => {
         } finally {
             setLoading(false);
         }
-    };
+    }, [user, userRole]);
+
+    useEffect(() => {
+        fetchDashboardData();
+    }, [fetchDashboardData]);
+
+
 
     // Expense Submission
     const handleExpenseSubmit = async (e) => {
@@ -183,6 +185,7 @@ const Dashboard = () => {
     };
 
     // Admin: Approve/Reject Expense
+    // eslint-disable-next-line no-unused-vars
     const handleExpenseAction = async (expenseId, action) => {
         try {
             let result;
